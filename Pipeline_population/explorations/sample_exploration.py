@@ -14,6 +14,5 @@ sys.path.append("/Workspace/Users/miguelhmc9@gmail.com/global_populationData/not
 
 # COMMAND ----------
 
-# !!! Before performing any data analysis, make sure to run the pipeline to materialize the sample datasets. The tables referenced in this notebook depend on that step.
-
-display(spark.sql("SELECT * FROM workspace.default.sample_trips_oct_14_1135"))
+df_global = spark.read.table("workspace.default.global_population_stats")
+display(df_global)
