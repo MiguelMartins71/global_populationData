@@ -1,245 +1,181 @@
-## Global Population Data Engineering Project
+## Projeto de Engenharia de Dados Populacionais Globais
 
-This project demonstrates a complete data engineering pipeline using Databricks to analyze global population data, with visualization in Power BI. The project showcases modern data engineering practices including ETL processes, data quality validation, and business intelligence integration.
+Este projeto demonstra um pipeline completo de engenharia de dados usando o Databricks para analisar dados populacionais globais, com visualização no Power BI. O projeto apresenta práticas modernas de engenharia de dados, incluindo processos de ETL, validação da qualidade dos dados e integração de inteligência de negócios.
 
-## Project Overview
+## Visão Geral do Projeto
 
-This data engineering project processes population data from Kaggle using Databricks as the primary data processing platform. The pipeline includes data ingestion, cleaning, transformation, and preparation for business intelligence consumption through Power BI dashboards.
+Este projeto de engenharia de dados processa dados populacionais do Kaggle usando o Databricks como plataforma primária de processamento de dados. O pipeline inclui ingestão, limpeza, transformação e preparação de dados para consumo de inteligência de negócios por meio de painéis do Power BI.
 
-## Objectives
+## Objetivos
 
-- Implement a robust ETL pipeline for global population data
-- Demonstrate data engineering best practices using Databricks
-- Create interactive visualizations for population insights
-- Automate data processing workflows
-- Ensure data quality and validation throughout the pipeline
+- Implementar um pipeline de ETL robusto para dados populacionais globais
+- Demonstrar as melhores práticas de engenharia de dados usando o Databricks
+- Criar visualizações interativas para insights populacionais
+- Automatizar fluxos de trabalho de processamento de dados
+- Garantir a qualidade e a validação dos dados em todo o pipeline
 
-## Architecture
+## Arquitetura
 
 ```
-Kaggle Dataset → Databricks ETL → Delta Lake → Power BI Dashboard
+Conjunto de Dados Kaggle → ETL Databricks → Delta Lake → Painel do Power BI
 ```
 
-### Technology Stack
+### Pilha de Tecnologia
 
-- **Data Processing**: Databricks (Apache Spark)
-- **Storage**: Delta Lake
-- **Programming Language**: Python (PySpark)
-- **Visualization**: Microsoft Power BI
-- **Version Control**: Git/GitHub
-- **Data Source**: Kaggle Population Dataset
+- **Processamento de Dados**: Databricks (Apache Spark)
+- **Armazenamento**: Delta Lake
+- **Linguagem de Programação**: Python (PySpark)
+- **Visualização**: Microsoft Power BI
+- **Controle de Versão**: Git/GitHub
+- **Fonte de Dados**: Conjunto de Dados Populacionais Kaggle
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 global_populationData/
 ├── notebooks/
-│   ├── 01_etl_pipeline.py
-│   └── 02_data_analysis.py
+│ ├── 01_etl_pipeline.py
+│ └── 02_data_analysis.py
 ├── dashboard/
-│   └── population_analysis.pbix
+│ └── population_analysis.pbix
 ├── config/
-│   └── settings.json
+│ └── settings.json
 ├── docs/
-│   ├── data_dictionary.md
-│   └── setup_instructions.md
+│ ├── data_dictionary.md
+│ └── setup_instructions.md
 ├── utils/
-│   └── helpers.py
+│ └── helpers.py
 ├── tests/
-│   └── test_data_quality.py
+│ └── test_data_quality.py
 ├── .gitignore
 ├── requirements.txt
 ├── README.md
-└── LICENSE
+└── LICENÇA
 ```
 
-## Data Pipeline
+## Pipeline de Dados
 
-### 1. Data Ingestion
-- Automated download from Kaggle API
-- Data validation and schema inference
-- Loading into Databricks environment
+### 1. Ingestão de Dados
+- Download automatizado da API do Kaggle
+- Validação de dados e inferência de esquema
+- Carregamento no ambiente Databricks
 
-### 2. Data Cleaning and Transformation
-- Remove duplicates and null values
-- Standardize country names and formats
-- Data type conversions and validations
-- Calculate derived metrics (population density, growth rates)
+### 2. Limpeza e Transformação de Dados
+- Remoção de duplicatas e valores nulos
+- Padronização de nomes e formatos de países
+- Conversões e validações de tipos de dados
+- Cálculo de métricas derivadas (densidade populacional, taxas de crescimento)
 
-### 3. Data Aggregation
-- Country-level aggregations
-- Regional summaries
-- Time-series calculations
-- Key performance indicators (KPIs)
+### 3. Agregação de Dados
+- Agregações em nível de país
+- Resumos regionais
+- Cálculos de séries temporais
+- Indicadores-chave de desempenho (KPIs)
 
-### 4. Data Export
-- Optimized Delta Lake storage
-- Power BI connector setup
-- Data export for visualization layer
+### 4. Exportação de Dados
+- Armazenamento otimizado do Delta Lake
+- Configuração do conector do Power BI
+- Exportação de dados para a camada de visualização
 
-## Key Features
+## Principais Recursos
 
-### Data Quality Assurance
-- Automated data validation rules
-- Missing data detection and handling
-- Outlier identification and treatment
-- Data consistency checks
+### Garantia de Qualidade de Dados
+- Regras automatizadas de validação de dados
+- Detecção e tratamento de dados ausentes
+- Identificação e tratamento de outliers
+- Verificações de consistência de dados
 
-### Performance Optimization
-- Delta Lake for ACID transactions
-- Partitioning strategies for large datasets
-- Query optimization techniques
-- Caching for frequently accessed data
+### Otimização de Desempenho
+- Delta Lake para transações ACID
+- Estratégias de particionamento para grandes conjuntos de dados
+- Técnicas de otimização de consultas
+- Armazenamento em cache para dados acessados ​​com frequência
 
-### Monitoring and Logging
-- Pipeline execution tracking
-- Error handling and alerting
-- Data lineage documentation
-- Performance metrics collection
+### Monitoramento e Registro
+- Rastreamento de execução de pipeline
+- Tratamento e alerta de erros
+- Documentação da linhagem de dados
+- Coleta de métricas de desempenho
 
-## Dashboard and Analytics
+## Painel e Análises
 
-The Power BI dashboard provides:
-- Interactive world population map
-- Population trends over time
-- Country ranking and comparisons
-- Regional analysis and breakdowns
-- Growth rate calculations
-- Population density visualizations
+O painel do Power BI fornece:
+- Mapa interativo da população mundial
+- Tendências populacionais ao longo do tempo
+- Classificação e comparações por países
+- Análises e detalhamentos regionais
+- Cálculos da taxa de crescimento
+- Visualizações de densidade populacional
 
-## Setup Instructions
+## Instruções de Configuração
 
-### Prerequisites
-- Databricks workspace access
-- Power BI Desktop or Power BI Pro license
-- Kaggle account and API credentials
-- Python 3.8 or higher
+### Pré-requisitos
+- Acesso ao espaço de trabalho do Databricks
+- Licença do Power BI Desktop ou Power BI Pro
+- Conta e credenciais de API do Kaggle
+- Python 3.8 ou superior
 
-### Installation Steps
+### Etapas de Instalação
 
-1. Clone the repository
+1. Clonar o repositório
 ```bash
-git clone https://github.com/yourusername/global_populationData.git
+git clone https://github.com/seunomedeusuário/global_populationData.git
 cd global_populationData
 ```
 
-2. Configure Databricks environment
-   - Import notebooks to your Databricks workspace
-   - Set up cluster configuration
-   - Configure data storage paths
+2. Configurar o ambiente do Databricks
+- Importar notebooks para o seu espaço de trabalho do Databricks
+- Configurar o cluster
+- Configurar os caminhos de armazenamento de dados
 
-3. Set up Kaggle API
-   - Download dataset using Kaggle API
-   - Configure authentication credentials
+3. Configurar a API do Kaggle
+- Baixar o conjunto de dados usando a API do Kaggle
+- Configurar as credenciais de autenticação
 
-4. Execute the pipeline
-   - Run notebooks in sequential order
-   - Monitor execution logs and outputs
+4. Executar o pipeline
+- Executar os notebooks em ordem sequencial
+- Monitorar os logs de execução e as saídas
 
-5. Connect Power BI
-   - Import the provided dashboard template
-   - Configure data source connections
-   - Refresh data and validate visualizations
+5. Conectar o Power BI
+- Importar o modelo de painel fornecido
+- Configurar as conexões das fontes de dados
+- Atualizar os dados e validar as visualizações
 
-## Data Sources
+## Fontes de Dados
 
-**Primary Dataset**: World Population Dataset from Kaggle
-- Country-level population data
-- Historical data from 1970 to present
-- Population projections through 2050
-- Additional demographic indicators
+**Conjunto de Dados Primário**: Conjunto de Dados da População Mundial do Kaggle
+- Dados populacionais em nível de país
+- Dados históricos de 1970 até o presente
+- Projeções populacionais até 2050
+- Indicadores demográficos adicionais
 
-## Key Metrics and KPIs
+## Principais Métricas e KPIs
 
-- Total population by country and region
-- Population growth rates (annual and decade)
-- Population density calculations
-- Urban vs rural population distribution
-- Age demographics and dependency ratios
-- Population projections and forecasts
+- População total por país e região
+- Taxas de crescimento populacional (anual e decenal)
+- Densidade populacional Cálculos
+- Distribuição populacional urbana vs. rural
+- Demografia etária e taxas de dependência
+- Projeções e previsões populacionais
 
-## Data Quality Framework
+## Estrutura de Qualidade de Dados
 
-### Validation Rules
-- Population values must be positive integers
-- Year values within expected range (1970-2050)
-- Country names standardized against ISO codes
-- No duplicate records for country-year combinations
+### Regras de Validação
+- Os valores populacionais devem ser inteiros positivos
+- Valores anuais dentro do intervalo esperado (1970-2050)
+- Nomes de países padronizados com base nos códigos ISO
+- Sem registros duplicados para combinações país-ano
 
-### Quality Metrics
-- Completeness percentage
-- Accuracy validation
-- Consistency checks
-- Timeliness assessment
+### Métricas de Qualidade
+- Porcentagem de completude
+- Validação de precisão
+- Verificações de consistência
+- Avaliação de pontualidade
 
-## Testing
+## Testes
 
-The project includes comprehensive testing:
-- Unit tests for transformation functions
-- Data quality validation tests
-- Integration tests for pipeline components
-- Performance benchmarking
-
-Run tests using:
-```bash
-python -m pytest tests/
-```
-
-## Documentation
-
-- **Data Dictionary**: Complete field descriptions and metadata
-- **Setup Guide**: Detailed installation and configuration steps
-- **API Documentation**: Function and class references
-- **Troubleshooting Guide**: Common issues and solutions
-
-## Performance Considerations
-
-- Optimized Spark configurations for population data processing
-- Delta Lake optimization for query performance
-- Partitioning strategy based on geographical regions
-- Caching frequently accessed aggregations
-
-## Security and Compliance
-
-- Data anonymization where applicable
-- Secure credential management
-- Access control implementation
-- Audit trail maintenance
-
-## Future Enhancements
-
-- Real-time data integration from APIs
-- Machine learning models for population forecasting
-- Additional demographic datasets integration
-- Mobile-responsive dashboard versions
-- Automated report generation and distribution
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes with appropriate tests
-4. Submit a pull request with detailed description
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Contact
-
-**Author**: Your Name
-- LinkedIn: (https://linkedin.com/in/yourprofile)
-- Email: miguelhmc9@gmail.com
-
-## Acknowledgments
-
-- Kaggle for providing the population dataset
-- Databricks community for technical resources
-- Open source contributors and maintainers
-
----
-
-**Project Status**: Active Development
-**Last Updated**: December 2024
-**Version**: 1.0.0
+O projeto inclui testes abrangentes:
+- Testes unitários para funções de transformação
+- Testes de validação da qualidade de dados
+- Testes de integração para componentes do pipeline
+- Benchmarking de desempenho
