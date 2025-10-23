@@ -36,3 +36,24 @@ print(f"Total de registros: {df_global.count():,}")
 print(f"Total de colunas: {len(df_global.columns)}")
 print(f"Colunas: {', '.join(df_global.columns)}")
 print(f"Tipos de dados: {', '.join([f'{col}: {df_global.schema[col].dataType}' for col in df_global.columns])}")
+
+# COMMAND ----------
+
+
+from pyspark.sql import functions as f
+total_pop = df_global.agg(f.sum("Population(in millions)")).first()[0]
+
+df_global = df_global.withColumn(
+    "Percent_of_world",
+    f.round((f.col("Population(in millions)") / total_pop) * 100, 2)
+)
+
+display(
+    df_global.orderBy("Percent_of_world", ascending=False).limit(10)
+)
+
+
+
+# COMMAND ----------
+
+
